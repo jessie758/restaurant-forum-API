@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs mb-4">
+  <li class="nav-item">
+    <a class="nav-link {{#if (isEqual route 'index')}}active{{/if}}" href="/restaurants">
+      首頁
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if (isEqual route 'feeds')}}active{{/if}}" href="/restaurants/feeds">
+      最新動態
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if (isEqual route 'topUsers')}}active{{/if}}" href="/users/top">
+      美食達人
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if (isEqual route 'topRestaurants')}}active{{/if}}" href="/restaurants/top">
+      Top 10 人氣餐廳
+    </a>
+  </li>
+</ul>

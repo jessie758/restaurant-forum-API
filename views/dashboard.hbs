@@ -1,0 +1,25 @@
+<h1 class='fw-bold'>{{restaurant.name}}</h1>
+<p>{{restaurant.Category.name}}</p>
+
+<hr />
+
+<ul>
+  <li>
+    瀏覽次數：
+    {{#if restaurant.viewCounts}}
+      {{restaurant.viewCounts}}
+    {{else}}
+      -
+    {{/if}}
+  </li>
+  <li>
+    評論數：
+    {{#if restaurant.Comments}}
+      {{restaurant.Comments.length}}
+    {{else}}
+      -
+    {{/if}}
+  </li>
+</ul>
+
+<a class='btn btn-outline-secondary' href='javascript:history.back()'>Back</a>

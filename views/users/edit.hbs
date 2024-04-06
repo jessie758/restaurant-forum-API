@@ -1,0 +1,36 @@
+<form
+  action='/users/{{user.id}}?_method=PUT'
+  method='POST'
+  enctype='multipart/form-data'
+  class='p-3'
+>
+  <h3 class='mb-5'>Edit User Profile</h3>
+
+  <div class='form-row mb-3'>
+    <label class='form-label' for='name'>Name</label>
+    <input
+      class='form-control'
+      id='name'
+      type='text'
+      name='name'
+      value='{{user.name}}'
+      placeholder='Enter name'
+    />
+  </div>
+
+  <div class='form-row mb-4'>
+    <label class='form-label' for='image'>Image</label>
+    <input
+      class='form-control form-control-file'
+      id='image'
+      type='file'
+      name='image'
+    />
+  </div>
+
+  <button type='submit' class='btn btn-primary'>Submit</button>
+  <a
+    class='btn btn-outline-secondary ms-2'
+    href='javascript:history.back()'
+  >Back</a>
+</form>

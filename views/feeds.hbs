@@ -1,0 +1,65 @@
+{{> restaurant-tabs route='feeds'}}
+
+<h1 class="fw-bold">最新動態</h1>
+
+<hr />
+
+<div class="row mt-5">
+  {{!-- 10 newest restaurants --}}
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header fw-bold">
+        最新餐廳
+      </div>
+      <div class="card-body">
+        {{#each restaurants}}
+          <div>
+            <h4>
+              <img
+                class="img-responsive center-block"
+                src="{{this.image}}"
+                alt="user image"
+                style="width: 25px; height: 25px; transition: opacity 0.5s; opacity:0;"
+                onload="this.style.opacity=1;"
+              />
+              <a class="link-primary ms-1" href="/restaurants/{{this.id}}">{{this.name}}</a>
+              <small class="fs-6">[{{this.Category.name}}]</small>
+            </h4>
+            <p class="my-4" style="white-space: break-spaces;">{{this.description}}</p>
+            - <small>{{relativeTimeFromNow this.createdAt}}</small>
+            <hr>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  {{!-- 10 newest comments --}}
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header fw-bold">
+        最新評論
+      </div>
+      <div class="card-body">
+        {{#each comments}}
+          <div>
+            <h4>
+              <img
+                class="img-responsive center-block"
+                src="{{this.Restaurant.image}}"
+                alt="user image"
+                style="width: 25px; height: 25px; transition: opacity 0.5s; opacity:0;"
+                onload="this.style.opacity=1;"
+              />
+              <a class="link-primary ms-1" href="/restaurants/{{this.Restaurant.id}}">{{this.Restaurant.name}}</a>
+            </h4>
+            <p class="my-4" style="white-space: break-spaces;">{{this.text}}</p>
+            - <a class="link-secondary" href="/users/{{this.User.id}}">{{this.User.name}}</a>
+            <small>at {{relativeTimeFromNow this.createdAt}}</small>
+            <hr>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
